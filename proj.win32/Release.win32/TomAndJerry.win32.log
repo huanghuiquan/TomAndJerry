@@ -1,20 +1,20 @@
-﻿生成启动时间为 2013/6/15 22:04:29。
+﻿生成启动时间为 2013/6/16 0:27:33。
      1>项目“I:\cocos2d-2.0-x-2.0.4\TomAndJerry\proj.win32\TomAndJerry.win32.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Release.win32\TomAndJerry.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\HelloWorldScene.cpp
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\StartMenu.cpp
          AppDelegate.cpp
      1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
-         HelloWorldScene.cpp
+         StartMenu.cpp
      1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
          正在生成代码...
        ResourceCompile:
-         所有输出均为最新。
+         H:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /l"0x0409" /IRelease.win32\ /nologo /fo"Release.win32\TomAndJerry.res" TomAndJerry.rc 
        Link:
          H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"I:\cocos2d-2.0-x-2.0.4\Release.win32\\" libcocos2d.lib libExtensions.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release.win32\TomAndJerry.win32.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.lib" /MACHINE:X86 Release.win32\TomAndJerry.res
          Release.win32\AppDelegate.obj
-         Release.win32\HelloWorldScene.obj
+         Release.win32\StartMenu.obj
          Release.win32\main.obj
          TomAndJerry.win32.vcxproj -> I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.exe
        Manifest:
@@ -26,4 +26,4 @@
 
 生成成功。
 
-已用时间 00:00:04.87
+已用时间 00:00:04.24

@@ -43,7 +43,7 @@
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
+    <ClInclude Include="..\Classes\StartMenu.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
@@ -54,7 +54,7 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="..\Classes\StartMenu.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
