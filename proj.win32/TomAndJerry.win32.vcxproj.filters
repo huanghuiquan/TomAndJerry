@@ -46,6 +46,24 @@
     <ClInclude Include="..\Classes\StartMenu.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Effect.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelManager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Options.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -55,6 +73,24 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\StartMenu.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Effect.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelManager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Options.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

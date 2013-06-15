@@ -1,4 +1,6 @@
 #include "StartMenu.h"
+#include "GameLayer.h"
+#include "Options.h"
 
 using namespace cocos2d;
 
@@ -33,6 +35,10 @@ bool StartMenu::init()
 
 		CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 		
+		CCSprite *background = CCSprite::create(s_bg);
+		background->setPosition(ccp(winSize.width / 2, winSize.height / 2));
+		addChild(background, 0);
+
 		CCSprite* newGameNormal = CCSprite::create(s_menu, CCRectMake(0, 0, 126, 33));
 		CCSprite* newGameSelected = CCSprite::create(s_menu, CCRectMake(0, 33, 126, 33));
 		CCSprite* newGameDisabled = CCSprite::create(s_menu, CCRectMake(0, 33*2, 126, 33));
@@ -49,6 +55,7 @@ bool StartMenu::init()
 		CCMenuItemSprite* gameSetting = CCMenuItemSprite::create(gameSettingNormal, gameSettingNSelected, gameSettingDesabled, this, menu_selector(StartMenu::menuCallback));
 		CCMenuItemSprite* about = CCMenuItemSprite::create(aboutNormal, aboutSelected, aboutDesabled, this, menu_selector(StartMenu::menuCallback));
 
+		newGame->setTag(0);
 		gameSetting->setTag(1);
 		about->setTag(2);
 
@@ -58,6 +65,7 @@ bool StartMenu::init()
 		menu->setPosition(ccp(winSize.width / 2, winSize.height / 2 - 80));
 		//this->schedule(schedule_selector(StartMenu::update), 0.1);
 
+
 		bRet = true;
     } while (0);
 
@@ -66,18 +74,22 @@ bool StartMenu::init()
 
 void StartMenu::menuCallback(CCObject* pSender)
 {
-	switch(((CCNode*)pSender)->getTag()){
-	case 1:// 进入游戏
-		CCLog("Into Game");
-		//CCDirector::sharedDirector()->replaceScene(GameLayer::scene());
-		break;
-	case 2://进入帮助
-		CCLog("Into About");
-		//CCDirector::sharedDirector()->replaceScene(About::scene());
-		break;
-	case 3:
-		CCDirector::sharedDirector()->end();
-	};  
+	int tag = dynamic_cast<CCNode*>(pSender)->getTag();
+	if(tag == 0){
+		CCScene *scene = CCScene::create();
+		scene->addChild(GameLayer::create());
+		CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.2, scene));
+	}
+	else if (tag == 1) {
+		CCScene *scene = Options::scene();
+		CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.2, scene));
+
+	}
+	else if(tag == 2)
+	{
+		//CCScene *scene = About::scene();
+		//CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.2, scene));
+	}
 
 }
 
