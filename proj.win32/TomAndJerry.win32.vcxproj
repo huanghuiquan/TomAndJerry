@@ -134,24 +134,31 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Effect.h" />
     <ClInclude Include="..\Classes\StartMenu.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="GameLayer.h" />
     <ClInclude Include="GameOver.h" />
+    <ClInclude Include="Jerry.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseLayer.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Tom.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Effect.cpp" />
     <ClCompile Include="..\Classes\StartMenu.cpp" />
+    <ClCompile Include="Config.h" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="Jerry.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PauseLayer.cpp" />
+    <ClCompile Include="Tom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

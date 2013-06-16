@@ -64,6 +64,15 @@
     <ClInclude Include="Options.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Tom.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Jerry.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -91,6 +100,18 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Options.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.h">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="Tom.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Jerry.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

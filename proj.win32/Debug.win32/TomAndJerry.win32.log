@@ -1,0 +1,42 @@
+﻿生成启动时间为 2013/6/16 23:48:16。
+     1>项目“I:\cocos2d-2.0-x-2.0.4\TomAndJerry\proj.win32\TomAndJerry.win32.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug.win32\TomAndJerry.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt LevelManager.cpp
+         LevelManager.cpp
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\levelmanager.cpp(82): warning C4018: “<”: 有符号/无符号不匹配
+       ResourceCompile:
+         所有输出均为最新。
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"I:\cocos2d-2.0-x-2.0.4\Debug.win32\TomAndJerry.win32.exe" /INCREMENTAL /NOLOGO /LIBPATH:"I:\cocos2d-2.0-x-2.0.4\Debug.win32\\" libcocos2d.lib libExtensions.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug.win32\TomAndJerry.win32.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"I:\cocos2d-2.0-x-2.0.4\Debug.win32\TomAndJerry.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"I:\cocos2d-2.0-x-2.0.4\Debug.win32\TomAndJerry.win32.lib" /MACHINE:X86 Debug.win32\TomAndJerry.res
+         Debug.win32\TomAndJerry.win32.exe.embed.manifest.res
+         Debug.win32\AppDelegate.obj
+         Debug.win32\Effect.obj
+         Debug.win32\StartMenu.obj
+         Debug.win32\Config.obj
+         Debug.win32\Floor.obj
+         Debug.win32\GameLayer.obj
+         Debug.win32\GameOver.obj
+         Debug.win32\Jerry.obj
+         Debug.win32\LevelManager.obj
+         Debug.win32\main.obj
+         Debug.win32\Options.obj
+         Debug.win32\PauseLayer.obj
+         Debug.win32\Tom.obj
+       Manifest:
+         H:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug.win32\TomAndJerry.win32.exe.embed.manifest" /manifest Debug.win32\TomAndJerry.win32.exe.intermediate.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         TomAndJerry.win32.vcxproj -> I:\cocos2d-2.0-x-2.0.4\Debug.win32\TomAndJerry.win32.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug.win32\TomAndJerry.win32.unsuccessfulbuild”。
+         正在对“Debug.win32\TomAndJerry.win32.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“I:\cocos2d-2.0-x-2.0.4\TomAndJerry\proj.win32\TomAndJerry.win32.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.38

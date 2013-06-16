@@ -1,13 +1,12 @@
-﻿生成启动时间为 2013/6/16 2:18:30。
+﻿生成启动时间为 2013/6/16 14:00:55。
      1>项目“I:\cocos2d-2.0-x-2.0.4\TomAndJerry\proj.win32\TomAndJerry.win32.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Release.win32\TomAndJerry.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\StartMenu.cpp
-         StartMenu.cpp
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt GameOver.cpp
+         GameOver.cpp
      1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
-     1>..\Classes\StartMenu.cpp(81): warning C4305: “参数”: 从“double”到“float”截断
-     1>..\Classes\StartMenu.cpp(85): warning C4305: “参数”: 从“double”到“float”截断
+     1>GameOver.cpp(42): warning C4305: “参数”: 从“double”到“float”截断
        ResourceCompile:
          所有输出均为最新。
        Link:
@@ -31,4 +30,4 @@
 
 生成成功。
 
-已用时间 00:00:02.23
+已用时间 00:00:02.41

@@ -14,6 +14,8 @@ enum Sate{
 class GameLayer : public CCLayer {
 
 private:
+	CCSize winSize;
+	LevelManager *m_levelManager;
 
 public:
 	GameLayer();
@@ -25,9 +27,10 @@ public:
 	void updateUI();
 	void gameOver();
 	void doPause(CCObject *pSender);
-	virtual void onEnter();
-	virtual void onExit();
+// 	virtual void onEnter();
+// 	virtual void onExit();
 	void initBackground();
+	void menuCloseCallback(CCObject* pSender);
 	CREATE_FUNC(GameLayer);
 };
 
