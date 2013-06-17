@@ -124,8 +124,12 @@ void ControlLayer::setControledSprite(CCSprite* pSprite){
 }
 
 void ControlLayer::update(float dt){
-	if(curDir != NONE){
-		tom->move(curDir);
-		//CCLOG("curDir = %d", curDir);
-	}
+// 	if(curDir != NONE){
+// 		tom->move(curDir);
+// 		//CCLOG("curDir = %d", curDir);
+// 	}
+}
+
+Direction ControlLayer::getYgDirection(){
+	return curDir;
 }

@@ -3,6 +3,8 @@
 
 #include "cocos2d.h"
 #include "Tom.h"
+#include "Floor.h"
+#include "Jerry.h"
 USING_NS_CC;
 
 class ControlLayer : public CCLayer  
@@ -14,8 +16,6 @@ private:
 	Direction curDir;
 	//¾«ÁéÏà¹Ø  
 	Tom* tom;
-	float speedX;  
-	float speedY;  
 	bool isMove;  
 
 public:  
@@ -26,6 +26,8 @@ public:
 	virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);  
 	virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);  
 	virtual void update(float dt);
+	Direction getYgDirection();
+
 	CREATE_FUNC(ControlLayer);
 	//CREATE_FUNC(ControlLayer);  
 

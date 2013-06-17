@@ -33,6 +33,8 @@ bool GameLayer::init()
 		return false;
 	}
 
+	CCLOG("Game Init...");
+
 	winSize = CCDirector::sharedDirector()->getWinSize();
 	m_levelManager = new LevelManager(this);
 	initBackground();
@@ -47,65 +49,37 @@ bool GameLayer::init()
 	menu->setPosition(CCPointZero);
 
 	m_levelManager->loadLevelResource(1);
-	ControlLayer *controlLayer = ControlLayer::create();
+	controlLayer = ControlLayer::create();
 	controlLayer->setControledSprite(m_levelManager->tom);
-	this->addChild(controlLayer,999);
+	this->addChild(controlLayer,9999);
 
-
+	this->scheduleUpdate();
+	
 	return true;
 }
 
-
-
 void GameLayer::update(float dt)
 {
-
-
-}
-
-
-void GameLayer::checkIsCollide()
-{
-
-}
-
-
-
-bool GameLayer::collide(CCSprite *a, CCSprite *b)
-{
-	if(!a || !b)
-	{
-		return false;
+	// 控制Tom的移动
+	ygDir = controlLayer->getYgDirection();
+	canTomMove(ygDir);
+	if(ygDir != NONE && canTomMove(ygDir)){
+		m_levelManager->tom->move(ygDir);
 	}
-	//CCRect aRect = a->collideRect();
-	//CCRect bRect = b->collideRect();
-	//if (aRect.intersectsRect(bRect)) {
-	//	return true;
-	//}
-	return false;
+
+	//检测猫是否抓到老鼠
+	if(isCatchJerry()){
+		gameOver();
+// 		CCDirector::sharedDirector()->pause();
+// 		CCDirector::sharedDirector()->resume();
+
+		//SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+		//SimpleAudioEngine::sharedEngine()->pauseAllEffects();
+// 		GameOver *gameOver = GameOver::create();
+// 		addChild(gameOver,9999);
+	}
 }
 
-void GameLayer::updateUI()
-{
-
-}
-
-// void GameLayer::onEnter()
-// {
-// 	CCDirector* pDirector = CCDirector::sharedDirector();
-// 	pDirector->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
-// 	CCLayer::onEnter();
-// }
-
-// void GameLayer::onExit()
-// {
-// 	CCDirector* pDirector = CCDirector::sharedDirector();
-// 	pDirector->getTouchDispatcher()->removeDelegate(this);
-// 	CCLayer::onExit();
-// }
-// 
-
-// 无限滚动地图，采用两张图循环加载滚动
 void GameLayer::initBackground()
 {
 	CCSprite *background = CCSprite::create(s_gameBg);
@@ -116,7 +90,7 @@ void GameLayer::initBackground()
 void GameLayer::gameOver()
 {
 	CCScene * scene = GameOver::scene();
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.2, scene));
+	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(0.5, scene));
 }
 
 void GameLayer::doPause(CCObject *pSender)
@@ -128,9 +102,75 @@ void GameLayer::doPause(CCObject *pSender)
 	addChild(pauseLayer,9999);
 }
 
-
 void GameLayer::menuCloseCallback(CCObject* pSender)
 {
 	// "close" menu item clicked
 	CCDirector::sharedDirector()->end();
+}
+
+bool GameLayer::canTomMove(Direction dir){
+	vector<Floor*> floors = m_levelManager->floors;
+	int len = floors.size();
+	CCRect aRect = m_levelManager->tom->collideRect();
+	CCRect bRect;
+	int speed = (m_levelManager->tom)->getSpeed();
+	if(dir == UP){
+		aRect.origin.y += speed;
+	}
+	else if(dir == DOWN){
+		aRect.origin.y -= speed;
+	}
+	else if(dir == LEFT){
+		aRect.origin.x -= speed;
+	}
+	else if(dir == RIGHT){
+		aRect.origin.x += speed;
+	}
+
+	for(int i = 0; i < len; i++){
+		bRect = floors.at(i)->collideRect();
+		if (aRect.intersectsRect(bRect)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+float GameLayer::isCatchJerry()
+{
+	CCRect aRect = m_levelManager->tom->collideRect();
+	CCRect bRect = m_levelManager->jerry->collideRect();
+	if (aRect.intersectsRect(bRect)) {
+		return true;
+	}
+	return false;
+}
+
+void GameLayer::onEnter()
+{
+	CCDirector* pDirector = CCDirector::sharedDirector();
+	pDirector->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+	CCLayer::onEnter();
+}
+
+void GameLayer::onExit()
+{
+	CCDirector* pDirector = CCDirector::sharedDirector();
+	pDirector->getTouchDispatcher()->removeDelegate(this);
+	CCLayer::onExit();
+}
+
+
+bool GameLayer::ccTouchBegan(CCTouch *touch, CCEvent *event)
+{
+	return false;
+}
+
+void GameLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
+{
+}
+
+void GameLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
+{
+	//    CCLog("touch end!");
 }

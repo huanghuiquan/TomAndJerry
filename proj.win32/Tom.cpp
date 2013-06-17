@@ -6,7 +6,8 @@
 
 using namespace cocos2d;
 
-Tom::Tom():m_size(100,100),m_speed(32),m_zOder(10),isWalking(false)
+Tom::Tom():m_size(100,100),m_speed(24),//m_speed must < 64
+	m_zOder(10),isWalking(false) 
 {
 
 }
@@ -23,9 +24,10 @@ bool Tom::init()
 		return false;
 	}
 	
+	winSize = CCDirector::sharedDirector()->getWinSize();
 	actions = CCAction::create();
 
-	// init life
+	//this->setContentSize(CCSize(64,64));
 	CCTexture2D * TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomRight2);
 	CCRect rec = CCRectMake(0, 0, m_size.width, m_size.height);
 	this->initWithTexture(TomTextureCache,  rec);
@@ -52,11 +54,25 @@ void Tom::move(Direction dir){
 			nextPos.x = nextPos.x + m_speed;
 		}
 
-		CCActionInterval *actionTo = CCMoveTo::actionWithDuration(0.50f, nextPos); 	
+
+		//±ß½ç¼ì²â
+		if(nextPos.x > winSize.width - this->getContentSize().width / 2+18){
+			nextPos.x = winSize.width  - this->getContentSize().width /2 +18;
+		}
+		else if(nextPos.x < this->getContentSize().width/2-18){
+			nextPos.x = this->getContentSize().width/2-18;
+		}
+		else if(nextPos.y > winSize.height - this->getContentSize().height/2+18){
+			nextPos.y = winSize.height - this->getContentSize().height/2+18;
+		}
+		else if(nextPos.y < this->getContentSize().height/2-18){
+			nextPos.y = this->getContentSize().height/2-18;
+		}
+
+		CCActionInterval *actionTo = CCMoveTo::actionWithDuration(0.010f, nextPos); 	
 		actions = CCSequence::actions(actionTo,  
 			CCCallFunc::actionWithTarget(this, callfunc_selector(Tom::setWalkStop)),NULL);  
 		this->runAction(actions);
-		CCLOG("runAction");
 		//bool done = actions->isDone();
 		isWalking = true;
 	}
@@ -66,12 +82,7 @@ CCRect Tom::collideRect()
 {
 	CCPoint pos = getPosition();
 	CCSize cs = getContentSize();
-	return CCRectMake(pos.x - cs.width / 2 , pos.y - cs.height / 2, cs.width, cs.height / 2);
-}
-
-int Tom::getZoder()
-{
-	return m_zOder;
+	return CCRectMake(pos.x - cs.width / 2 + 18, pos.y - cs.height / 2 - 18, 64, 64);
 }
 
 void Tom::setWalkStop(){
@@ -81,3 +92,9 @@ void Tom::setWalkStop(){
 void Tom::update(float dt){
 	//CCLOG("No walk");
 }
+
+int Tom::getSpeed()
+{
+	return m_speed;
+}
+

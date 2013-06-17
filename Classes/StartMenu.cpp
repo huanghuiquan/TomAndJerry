@@ -78,7 +78,7 @@ void StartMenu::menuCallback(CCObject* pSender)
 	if(tag == 0){
 		CCScene *scene = CCScene::create();
 		scene->addChild(GameLayer::create());
-		CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.2, scene));
+		CCDirector::sharedDirector()->replaceScene(CCTransitionMoveInR::transitionWithDuration(1.2,scene));
 	}
 	else if (tag == 1) {
 		CCScene *scene = Options::scene();

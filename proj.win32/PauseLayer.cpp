@@ -11,7 +11,7 @@
 #include <limits>
 #include "resource.h"
 
-using namespace CocosDenshion;
+using namespace std;
 
 CCMenu *menu;
 bool PauseLayer::init()
@@ -35,11 +35,35 @@ bool PauseLayer::init()
 	return true;
 }
 
-// 触摸被吞掉了，这个回调不会调用哦
-void PauseLayer::doResume(CCObject *pSender)
+void PauseLayer::registerWithTouchDispatcher()
 {
-	CCLog("resume!");
+	// NDK编译，需加上头 #include <limits>
+	// 优先级数字设为最小，那么具有最高优先级，最后参数设为true，则触摸会被这里吞掉，下面的层不会接收到触摸事件
+	//int i_min = numeric_limits<int>::min();
+	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, -2147483648,true);
+	CCLayer::registerWithTouchDispatcher();
 }
 
+bool PauseLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
+{
+	// 因为回调调不到了，所以resume写在了这里
+	CCRect rect =  menu->getChildByTag(10)->boundingBox();
+	if (rect.containsPoint(touch->getLocation())) {
+		CCLog("touch play");
+		CCDirector::sharedDirector()->resume();
+// 		SimpleAudioEngine::sharedEngine()->resumeAllEffects();
+// 		SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+		this->removeFromParentAndCleanup(false);
+	}
+	return true;
+}
+void PauseLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
+{
+
+}
+void PauseLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
+{
+
+}
 
 

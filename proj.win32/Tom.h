@@ -10,6 +10,8 @@ enum Direction {UP, DOWN, LEFT, RIGHT, NONE};
 
 class Tom : public CCSprite{
 private:
+	CCSize winSize;
+
 	CCSize m_size;
 
 	// 速度
@@ -32,13 +34,13 @@ public:
 	// 碰撞矩形
 	virtual CCRect collideRect();
 
-	int getZoder();
-
 	virtual void update(float dt);
 
 	void setWalkStop();
+
 	// 构造器
 	CREATE_FUNC(Tom);
+	int getSpeed();
 };
 
 #endif 

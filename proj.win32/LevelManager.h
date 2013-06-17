@@ -13,6 +13,7 @@
 USING_NS_CC;
 using namespace std;
 
+
 class LevelManager{
 private:
 	cocos2d::CCLayer *m_gameLayer;
@@ -26,7 +27,6 @@ public:
 	vector<Floor*> floors;
 
 	CCSize winSize;
-
 
 public:
 	LevelManager(cocos2d::CCLayer *gameLayer);

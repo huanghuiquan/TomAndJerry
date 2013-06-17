@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "LevelManager.h"
+#include "ControlLayer.h"
 USING_NS_CC;
 
 enum Sate{
@@ -16,21 +17,26 @@ class GameLayer : public CCLayer {
 private:
 	CCSize winSize;
 	LevelManager *m_levelManager;
+	Direction ygDir;
+	ControlLayer *controlLayer;
 
 public:
 	GameLayer();
 	~GameLayer();
 	virtual bool init();
 	virtual void update(float dt);
-	void checkIsCollide();
-	bool collide(CCSprite *a, CCSprite *b);
-	void updateUI();
 	void gameOver();
 	void doPause(CCObject *pSender);
-// 	virtual void onEnter();
-// 	virtual void onExit();
 	void initBackground();
 	void menuCloseCallback(CCObject* pSender);
+	virtual void onEnter();
+	virtual void onExit();
+	virtual bool ccTouchBegan(CCTouch* touch, CCEvent* event);
+	virtual void ccTouchMoved(CCTouch* touch, CCEvent* event);
+	virtual void ccTouchEnded(CCTouch* touch, CCEvent* event);
+	//检测Tom是否可以移到下个方向
+	bool canTomMove(Direction);
+	float isCatchJerry();
 
 	CREATE_FUNC(GameLayer);
 };

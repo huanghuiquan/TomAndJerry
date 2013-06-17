@@ -13,11 +13,18 @@ static const char s_floor[] = "wall.png";
 static const char s_tomRight2[] = "right2.png";
 static const char s_ygBG[] = "yg_bg.png";
 static const char s_yg[] = "yg.png";
+static const char s_gameOver[] = "gameOver.png";
 
 //font
 static const char s_font[] = "Font/bitmapFontTest.fnt";
 
 //Levels
 static const char s_level1[] = "Levels/level1.txt";
+
+//map
+const int rows = 12;
+const int cols = 16;
+static int i_map[rows][cols] = {0};
+
 
 #endif

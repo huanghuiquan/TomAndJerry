@@ -22,9 +22,16 @@ bool GameOver::init()
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 
 	//背景
-	CCSprite *background = CCSprite::create(s_bg);
-	background->setPosition(ccp(winSize.width / 2, winSize.height / 2));
-	addChild(background, 0);
+// 	CCSprite *background = CCSprite::create(s_bg);
+// 	background->setPosition(ccp(winSize.width / 2, winSize.height / 2));
+// 	background->setOpacity(100);
+// 	addChild(background, 0);
+
+	//gameOver标题
+	CCSprite *gameOverLabel = CCSprite::create(s_gameOver);
+	gameOverLabel->setPosition(ccp(winSize.width / 2, winSize.height / 2));
+	//background->setOpacity(100);
+	addChild(gameOverLabel, 10);
 
 	//重玩菜单
 	CCSprite *playAgainNormal = CCSprite::create(s_menu, CCRectMake(378, 0, 126, 33));
@@ -44,5 +51,5 @@ void GameOver::playAgain(CCObject* pSender)
 {
 	CCScene *scene = CCScene::create();
 	scene->addChild(GameLayer::create());
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.2, scene));
+	CCDirector::sharedDirector()->replaceScene(CCTransitionFlipX::transitionWithDuration(1.2,scene));
 }
