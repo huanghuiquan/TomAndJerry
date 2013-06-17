@@ -6,7 +6,7 @@
 
 using namespace cocos2d;
 
-Jerry::Jerry():m_size(32,32),m_speed(10),m_zOder(10)
+Jerry::Jerry():m_size(64,64),m_speed(10),m_zOder(10)
 {
 
 }

@@ -38,7 +38,7 @@ void LevelManager::loadLevelResource(int level)
 		ss >> dataX;
 		ss >> c;
 		ss >> dataY;
-		m_floorPositions.push_back(ccp(dataX*32 + 16, winSize.height-dataY*32-16));
+		m_floorPositions.push_back(ccp(dataX*64 + 32, winSize.height-dataY*64-32));
 		fin.getline(tmp, 256, '\n');
 	}
 
@@ -50,7 +50,7 @@ void LevelManager::loadLevelResource(int level)
 	ss >> dataX;
 	ss >> c;
 	ss >> dataY;
-	m_tomPosition = ccp(dataX*32 + 16, winSize.height -dataY*32-16);
+	m_tomPosition = ccp(dataX*64 + 32, winSize.height -dataY*64-32);
 	fin.getline(tmp, 256, '\n');
 
 	fin.getline(tmp, 256, '\n');
@@ -61,7 +61,7 @@ void LevelManager::loadLevelResource(int level)
 	ss >> dataX;
 	ss >> c;
 	ss >> dataY;
-	m_jerryPosition = ccp(dataX*32 + 16, winSize.height-dataY*32-16);
+	m_jerryPosition = ccp(dataX + 64, winSize.height-dataY*64-32);
 	fin.getline(tmp, 256, '\n');
 
 	fin.close();

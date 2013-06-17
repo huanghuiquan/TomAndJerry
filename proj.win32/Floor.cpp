@@ -5,7 +5,7 @@
 
 using namespace cocos2d;
 
-Floor::Floor():m_size(32,32),m_zOder(10)
+Floor::Floor():m_size(64,64),m_zOder(10)
 {
 
 }

@@ -9,7 +9,8 @@ static const char s_menuTitle[] = "menuTitle.png";
 static const char s_gameBg[] = "game_bg.png";
 static const char s_tom[] = "tom.jpg";
 static const char s_jerry[] = "jerry.jpg";
-static const char s_floor[] = "floor.png";
+static const char s_floor[] = "wall.png";
+static const char s_tomRight2[] = "right2.png";
 
 //font
 static const char s_font[] = "Font/bitmapFontTest.fnt";

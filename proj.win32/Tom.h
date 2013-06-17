@@ -20,6 +20,8 @@ public:
 	// ³õÊ¼»¯
 	virtual bool init();
 
+	void moveTo(CCPoint);
+
 	// Åö×²¾ØÐÎ
 	virtual CCRect collideRect();
 

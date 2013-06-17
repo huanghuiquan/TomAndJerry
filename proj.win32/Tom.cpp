@@ -6,7 +6,7 @@
 
 using namespace cocos2d;
 
-Tom::Tom():m_size(32,32),m_speed(10),m_zOder(10)
+Tom::Tom():m_size(100,100),m_speed(10),m_zOder(10)
 {
 
 }
@@ -25,12 +25,26 @@ bool Tom::init()
 	
 
 	// init life
-	CCTexture2D * TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tom);
+	CCTexture2D * TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomRight2);
 	CCRect rec = CCRectMake(0, 0, m_size.width, m_size.height);
 	this->initWithTexture(TomTextureCache,  rec);
 	TomTextureCache->release();
 
 	return true;
+}
+
+void Tom::moveTo(CCPoint pos){
+	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+	CCActionInterval *actionTo = CCMoveTo::actionWithDuration(2.0f,   
+		CCPointMake(winSize.width * 3 / 4, winSize.height / 2));  
+	CCActionInterval *actionBy = CCMoveBy::actionWithDuration(2.0f,  
+		CCPointMake(-winSize.width / 2, 0));  
+	CCActionInterval *actionByCopy = (CCActionInterval *) actionBy->copy();  
+	CCActionInterval *actionBack = actionBy->reverse();  
+
+	this->runAction(CCSequence::actions(actionTo, actionByCopy, NULL));  
+	this->runAction(CCSequence::actions(actionBy, actionBack, NULL));  
+}
 }
 
 

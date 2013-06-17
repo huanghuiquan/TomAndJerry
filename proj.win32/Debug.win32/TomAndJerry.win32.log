@@ -1,13 +1,32 @@
-﻿生成启动时间为 2013/6/16 23:48:16。
+﻿生成启动时间为 2013/6/17 1:15:56。
      1>项目“I:\cocos2d-2.0-x-2.0.4\TomAndJerry\proj.win32\TomAndJerry.win32.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug.win32\TomAndJerry.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt LevelManager.cpp
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\Effect.cpp ..\Classes\StartMenu.cpp Floor.cpp GameLayer.cpp GameOver.cpp Jerry.cpp LevelManager.cpp Options.cpp PauseLayer.cpp Tom.cpp
+         AppDelegate.cpp
+         正在生成代码...
+         正在编译...
+         Tom.cpp
+         PauseLayer.cpp
+         Options.cpp
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\options.cpp(53): warning C4305: “参数”: 从“double”到“float”截断
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\options.cpp(83): warning C4305: “参数”: 从“double”到“float”截断
          LevelManager.cpp
      1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\levelmanager.cpp(82): warning C4018: “<”: 有符号/无符号不匹配
+         Jerry.cpp
+         GameOver.cpp
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\gameover.cpp(47): warning C4305: “参数”: 从“double”到“float”截断
+         GameLayer.cpp
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\gamelayer.cpp(116): warning C4305: “参数”: 从“double”到“float”截断
+         Floor.cpp
+         StartMenu.cpp
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\classes\startmenu.cpp(81): warning C4305: “参数”: 从“double”到“float”截断
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\classes\startmenu.cpp(85): warning C4305: “参数”: 从“double”到“float”截断
+         Effect.cpp
+         正在生成代码...
        ResourceCompile:
-         所有输出均为最新。
+         H:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0409" /IDebug.win32\ /nologo /fo"Debug.win32\TomAndJerry.res" TomAndJerry.rc 
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
@@ -39,4 +58,4 @@
 
 生成成功。
 
-已用时间 00:00:03.38
+已用时间 00:00:29.03
