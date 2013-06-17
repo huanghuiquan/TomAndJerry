@@ -4,6 +4,10 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+
+enum Direction {UP, DOWN, LEFT, RIGHT, NONE};
+
+
 class Tom : public CCSprite{
 private:
 	CCSize m_size;
@@ -12,6 +16,9 @@ private:
 	int m_speed;
 
 	int m_zOder;
+	CCAction *actions;
+
+	bool isWalking;
 
 public:
 	Tom();
@@ -20,13 +27,16 @@ public:
 	// 初始化
 	virtual bool init();
 
-	void moveTo(CCPoint);
+	void move(Direction);
 
 	// 碰撞矩形
 	virtual CCRect collideRect();
 
 	int getZoder();
 
+	virtual void update(float dt);
+
+	void setWalkStop();
 	// 构造器
 	CREATE_FUNC(Tom);
 };

@@ -20,7 +20,7 @@ private:
 	CCPoint m_jerryPosition;
 	CCPoint m_tomPosition;
 	vector<CCPoint> m_floorPositions;
-
+public:
 	Jerry *jerry;
 	Tom *tom;
 	vector<Floor*> floors;

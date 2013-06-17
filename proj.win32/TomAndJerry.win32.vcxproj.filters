@@ -73,6 +73,9 @@
     <ClInclude Include="Jerry.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="ControlLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -112,6 +115,9 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Jerry.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlLayer.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

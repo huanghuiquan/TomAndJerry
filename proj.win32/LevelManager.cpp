@@ -84,6 +84,5 @@ void LevelManager::loadLevelResource(int level)
 		f->setPosition(m_floorPositions.at(i));
 		m_gameLayer->addChild(f);
 	}
-
 }
 

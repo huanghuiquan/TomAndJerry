@@ -12,7 +12,7 @@
 #include "Effect.h"
 #include "GameOver.h"
 #include "PauseLayer.h"
-
+#include "ControlLayer.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -47,6 +47,9 @@ bool GameLayer::init()
 	menu->setPosition(CCPointZero);
 
 	m_levelManager->loadLevelResource(1);
+	ControlLayer *controlLayer = ControlLayer::create();
+	controlLayer->setControledSprite(m_levelManager->tom);
+	this->addChild(controlLayer,999);
 
 
 	return true;

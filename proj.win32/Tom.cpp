@@ -6,7 +6,7 @@
 
 using namespace cocos2d;
 
-Tom::Tom():m_size(100,100),m_speed(10),m_zOder(10)
+Tom::Tom():m_size(100,100),m_speed(32),m_zOder(10),isWalking(false)
 {
 
 }
@@ -23,6 +23,7 @@ bool Tom::init()
 		return false;
 	}
 	
+	actions = CCAction::create();
 
 	// init life
 	CCTexture2D * TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomRight2);
@@ -30,23 +31,36 @@ bool Tom::init()
 	this->initWithTexture(TomTextureCache,  rec);
 	TomTextureCache->release();
 
+	this->scheduleUpdate();
 	return true;
 }
 
-void Tom::moveTo(CCPoint pos){
-	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-	CCActionInterval *actionTo = CCMoveTo::actionWithDuration(2.0f,   
-		CCPointMake(winSize.width * 3 / 4, winSize.height / 2));  
-	CCActionInterval *actionBy = CCMoveBy::actionWithDuration(2.0f,  
-		CCPointMake(-winSize.width / 2, 0));  
-	CCActionInterval *actionByCopy = (CCActionInterval *) actionBy->copy();  
-	CCActionInterval *actionBack = actionBy->reverse();  
+void Tom::move(Direction dir){
+	if(!isWalking){
+		CCPoint nextPos = this->getPosition();
+		if(dir == UP){
+			nextPos.y = nextPos.y + m_speed;
+		}
+		else if (dir == DOWN)
+		{
+			nextPos.y = nextPos.y - m_speed;
+		}
+		else if(dir == LEFT){
+			nextPos.x =nextPos.x - m_speed;
+		}
+		else if(dir == RIGHT){
+			nextPos.x = nextPos.x + m_speed;
+		}
 
-	this->runAction(CCSequence::actions(actionTo, actionByCopy, NULL));  
-	this->runAction(CCSequence::actions(actionBy, actionBack, NULL));  
+		CCActionInterval *actionTo = CCMoveTo::actionWithDuration(0.50f, nextPos); 	
+		actions = CCSequence::actions(actionTo,  
+			CCCallFunc::actionWithTarget(this, callfunc_selector(Tom::setWalkStop)),NULL);  
+		this->runAction(actions);
+		CCLOG("runAction");
+		//bool done = actions->isDone();
+		isWalking = true;
+	}
 }
-}
-
 
 CCRect Tom::collideRect()
 {
@@ -58,4 +72,12 @@ CCRect Tom::collideRect()
 int Tom::getZoder()
 {
 	return m_zOder;
+}
+
+void Tom::setWalkStop(){
+	isWalking = false;
+}
+
+void Tom::update(float dt){
+	//CCLOG("No walk");
 }

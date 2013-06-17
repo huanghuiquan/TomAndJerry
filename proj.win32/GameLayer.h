@@ -1,5 +1,5 @@
-#ifndef __GameLayer__
-#define __GameLayer__
+#ifndef __GameLayer_H__
+#define __GameLayer_H__
 
 #include "cocos2d.h"
 #include "LevelManager.h"
@@ -31,6 +31,7 @@ public:
 // 	virtual void onExit();
 	void initBackground();
 	void menuCloseCallback(CCObject* pSender);
+
 	CREATE_FUNC(GameLayer);
 };
 

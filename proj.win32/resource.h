@@ -11,6 +11,8 @@ static const char s_tom[] = "tom.jpg";
 static const char s_jerry[] = "jerry.jpg";
 static const char s_floor[] = "wall.png";
 static const char s_tomRight2[] = "right2.png";
+static const char s_ygBG[] = "yg_bg.png";
+static const char s_yg[] = "yg.png";
 
 //font
 static const char s_font[] = "Font/bitmapFontTest.fnt";
