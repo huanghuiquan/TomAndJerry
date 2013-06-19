@@ -37,7 +37,7 @@ CCRect Floor::collideRect()
 {
 	CCPoint pos = getPosition();
 	CCSize cs = getContentSize();
-	return CCRectMake(pos.x - cs.width / 2 , pos.y - cs.height / 2, cs.width, cs.height / 2);
+	return CCRectMake(pos.x - cs.width / 2 , pos.y - cs.height / 2, cs.width, cs.height);
 }
 
 int Floor::getZoder()

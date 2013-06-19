@@ -18,6 +18,11 @@ private:
 
 	bool isWalking;
 
+	CCTexture2D * TomTextureCache;
+
+	int m_step;
+
+
 public:
 	Tom();
 	~Tom();
@@ -35,6 +40,8 @@ public:
 	void setWalkStop();
 
 	int getSpeed();
+
+	void changePicture(Direction dir, int step);
 
 	// ¹¹ÔìÆ÷
 	CREATE_FUNC(Tom);

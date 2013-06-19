@@ -57,7 +57,7 @@ void ControlLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 
 	bool inRange=pow(centre.x-convertedLocation.x,2)+pow(centre.y-convertedLocation.y,2)<pow(radius,2);
 	Direction dir;
-	if(isMove&&inRange)
+	if(isMove)
 	{
 		yg2->setPosition(convertedLocation);
 

@@ -19,6 +19,10 @@ private:
 
 	Direction curDir;
 
+	CCTexture2D * jerryTextureCache;
+
+	int m_step;
+
 public:
 	Jerry();
 	~Jerry();
@@ -34,6 +38,7 @@ public:
 
 	Direction getDirection();
 	void setDirection(Direction dir);
+	void changePicture(Direction dir, int step);
 
 	CREATE_FUNC(Jerry);
 };

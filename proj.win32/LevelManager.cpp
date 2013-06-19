@@ -63,7 +63,7 @@ void LevelManager::loadLevelResource(int level)
 	ss >> dataX;
 	ss >> c;
 	ss >> dataY;
-	m_jerryPosition = ccp(dataX + 64, winSize.height-dataY*64-32);
+	m_jerryPosition = ccp(dataX * 64 + 32, winSize.height-dataY*64-32);
 	fin.getline(tmp, 256, '\n');
 
 	fin.close();

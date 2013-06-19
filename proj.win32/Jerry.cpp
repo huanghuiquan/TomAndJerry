@@ -4,7 +4,7 @@
 
 using namespace cocos2d;
 
-Jerry::Jerry():m_size(64,64),m_speed(30),isWalking(false),curDir(DOWN)
+Jerry::Jerry():m_size(64,64),m_speed(15),isWalking(false),curDir(DOWN),m_step(0)
 {
 	winSize = CCDirector::sharedDirector()->getWinSize();
 }
@@ -21,10 +21,9 @@ bool Jerry::init()
 		return false;
 	}
 	// init life
-	CCTexture2D * JerryTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_jerry);
+	jerryTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_jerryRight[2]);
 	CCRect rec = CCRectMake(0, 0, m_size.width, m_size.height);
-	this->initWithTexture(JerryTextureCache,  rec);
-	JerryTextureCache->release();
+	this->initWithTexture(jerryTextureCache,  rec);
 
 	return true;
 }
@@ -33,7 +32,7 @@ CCRect Jerry::collideRect()
 {
 	CCPoint pos = getPosition();
 	CCSize cs = getContentSize();
-	return CCRectMake(pos.x - cs.width / 2 , pos.y - cs.height / 2, cs.width, cs.height / 2);
+	return CCRectMake(pos.x - cs.width / 2 + 1 , pos.y - cs.height / 2 + 1, 63, 63);
 }
 
 /************************************************************************/
@@ -96,4 +95,27 @@ void Jerry::setDirection(Direction dir){
 	curDir = dir;
 }
 
+void Jerry::changePicture(Direction dir, int step)
+{
+	//CCTexture2D * TomTextureCache;
+	switch(dir)
+	{
+	case UP:
+		jerryTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_jerryUp[step]);
+		break;
+	case DOWN:
+		jerryTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_jerryDown[step]);
+		break;
+	case LEFT:
+		jerryTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_jerryLeft[step]);
+		break;
+	case RIGHT:
+		jerryTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_jerryRight[step]);
+		break;
+	case NONE:
+		return;
+	}
+	this->setTexture(jerryTextureCache);
+	//TomTextureCache->release();
+}
 

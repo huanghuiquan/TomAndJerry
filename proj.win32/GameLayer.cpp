@@ -225,12 +225,16 @@ void GameLayer::autoControlJerry(float dt){
 	}
 	else {
 		Direction dir = m_levelManager->jerry->getDirection();
+		int count = 0;
 		while(1){
+			count ++;
 			dir = (Direction)((dir + 1) % 4);
-			if(isFartherAwayFromTom(dir)){
+			if(canJerryMove(dir) && isFartherAwayFromTom(dir)){
 				m_levelManager->jerry->move(dir);
 				m_levelManager->jerry->setDirection(dir);
-
+				break;
+			}
+			if(count > 5){
 				break;
 			}
 		}
@@ -246,27 +250,28 @@ bool GameLayer::isFartherAwayFromTom(Direction dir){
 	CCPoint jerryPos = m_levelManager->jerry->getPosition();
 	CCPoint jerryNextPos = jerryPos;
 	float orgDis = dist(tomPos,jerryPos);
+	int detectLen = 200;
 	if(dir == UP){
-		jerryNextPos.y += 200;
+		jerryNextPos.y += detectLen;
 		if(dist(tomPos, jerryNextPos) > orgDis){
 			return true;
 		}
 	}
 	else if(dir == DOWN){
-		jerryNextPos.y -= 200;
+		jerryNextPos.y -= detectLen;
 		if(dist(tomPos, jerryNextPos) > orgDis){
 			return true;
 		}
 	}
 	else if(dir == RIGHT){
-		jerryNextPos.x += 200;
+		jerryNextPos.x += detectLen;
 		float t = dist(tomPos, jerryNextPos);
 		if(dist(tomPos, jerryNextPos) > orgDis){
 			return true;
 		}
 	}
 	else if(dir == LEFT){
-		jerryNextPos.x -= 200;
+		jerryNextPos.x -= detectLen;
 		if(dist(tomPos, jerryNextPos) > orgDis){
 			return true;
 		}

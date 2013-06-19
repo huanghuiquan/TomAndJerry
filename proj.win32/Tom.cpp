@@ -4,7 +4,7 @@
 
 using namespace cocos2d;
 
-Tom::Tom():m_size(100,100),m_speed(24),//m_speed must < 64
+Tom::Tom():m_size(100,100),m_speed(15),m_step(0),//m_speed must < 64
 	isWalking(false) 
 {
 	winSize = CCDirector::sharedDirector()->getWinSize();
@@ -25,10 +25,9 @@ bool Tom::init()
 	actions = CCAction::create();
 
 	//this->setContentSize(CCSize(64,64));
-	CCTexture2D * TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomRight2);
+	TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomRight[2]);
 	CCRect rec = CCRectMake(0, 0, m_size.width, m_size.height);
 	this->initWithTexture(TomTextureCache,  rec);
-	TomTextureCache->release();
 
 	this->scheduleUpdate();
 	return true;
@@ -66,11 +65,14 @@ void Tom::move(Direction dir){
 			nextPos.y = this->getContentSize().height/2-18;
 		}
 
-		CCActionInterval *actionTo = CCMoveTo::actionWithDuration(0.010f, nextPos); 	
+		CCActionInterval *actionTo = CCMoveTo::actionWithDuration(0.05f, nextPos); 	
 		actions = CCSequence::actions(actionTo,  
 			CCCallFunc::actionWithTarget(this, callfunc_selector(Tom::setWalkStop)),NULL);  
 		this->runAction(actions);
-		//bool done = actions->isDone();
+		m_step = (m_step + 1) % 4;
+
+		changePicture(dir, m_step);
+
 		isWalking = true;
 	}
 }
@@ -79,7 +81,7 @@ CCRect Tom::collideRect()
 {
 	CCPoint pos = getPosition();
 	CCSize cs = getContentSize();
-	return CCRectMake(pos.x - cs.width / 2 + 18, pos.y - cs.height / 2 - 18, 64, 64);
+	return CCRectMake(pos.x - cs.width / 2 + 18, pos.y - cs.height / 2 + 18, 64, 64);
 }
 
 void Tom::setWalkStop(){
@@ -95,3 +97,27 @@ void Tom::update(float dt){
 	//CCLOG("No walk");
 }
 
+// Add animation of Tom's moving.
+void Tom::changePicture(Direction dir, int step)
+{
+	//CCTexture2D * TomTextureCache;
+	switch(dir)
+	{
+	case UP:
+		TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomUp[step]);
+		break;
+	case DOWN:
+		TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomDown[step]);
+		break;
+	case LEFT:
+		TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomLeft[step]);
+		break;
+	case RIGHT:
+		TomTextureCache = CCTextureCache::sharedTextureCache()->addImage(s_tomRight[step]);
+		break;
+	case NONE:
+		return;
+	}
+	this->setTexture(TomTextureCache);
+	//TomTextureCache->release();
+}
