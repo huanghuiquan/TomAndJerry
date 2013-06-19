@@ -5,6 +5,7 @@
 #include "Tom.h"
 #include "Floor.h"
 #include "Jerry.h"
+#include "resource.h"
 USING_NS_CC;
 
 class ControlLayer : public CCLayer  

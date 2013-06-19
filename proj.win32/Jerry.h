@@ -2,30 +2,39 @@
 #define __JERRY_H__
 
 #include "cocos2d.h"
+#include "resource.h"
 USING_NS_CC;
 
 class Jerry : public CCSprite{
 private:
+	CCSize winSize;
+
 	CCSize m_size;
 
-	// 速度
-	int m_speed;
+	int m_speed; // 速度
 
-	int m_zOder;
+	CCAction *actions;
+
+	bool isWalking;
+
+	Direction curDir;
 
 public:
 	Jerry();
 	~Jerry();
-
-	// 初始化
 	virtual bool init();
 
-	// 碰撞矩形
-	virtual CCRect collideRect();
+	virtual CCRect collideRect();// 碰撞矩形
 
-	int getZoder();
+	void move(Direction);	
 
-	// 构造器
+	void setWalkStop();
+
+	int getSpeed();
+
+	Direction getDirection();
+	void setDirection(Direction dir);
+
 	CREATE_FUNC(Jerry);
 };
 

@@ -11,7 +11,6 @@ enum Sate{
 	stateGameOver= 1,
 };
 
-
 class GameLayer : public CCLayer {
 
 private:
@@ -19,6 +18,7 @@ private:
 	LevelManager *m_levelManager;
 	Direction ygDir;
 	ControlLayer *controlLayer;
+	bool start;
 
 public:
 	GameLayer();
@@ -28,6 +28,8 @@ public:
 	void gameOver();
 	void doPause(CCObject *pSender);
 	void initBackground();
+	bool isStart();
+	void setStart();
 	void menuCloseCallback(CCObject* pSender);
 	virtual void onEnter();
 	virtual void onExit();
@@ -36,7 +38,13 @@ public:
 	virtual void ccTouchEnded(CCTouch* touch, CCEvent* event);
 	//检测Tom是否可以移到下个方向
 	bool canTomMove(Direction);
-	float isCatchJerry();
+	bool isCatchJerry();
+	bool canJerryMove(Direction);
+
+	//Jerry 自动控制函数
+	void autoControlJerry(float);
+
+	bool isFartherAwayFromTom(Direction dir); 
 
 	CREATE_FUNC(GameLayer);
 };

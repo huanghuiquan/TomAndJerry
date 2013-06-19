@@ -2,11 +2,8 @@
 #define __TOM_H__
 
 #include "cocos2d.h"
+#include "resource.h"
 USING_NS_CC;
-
-
-enum Direction {UP, DOWN, LEFT, RIGHT, NONE};
-
 
 class Tom : public CCSprite{
 private:
@@ -17,7 +14,6 @@ private:
 	// 速度
 	int m_speed;
 
-	int m_zOder;
 	CCAction *actions;
 
 	bool isWalking;
@@ -38,9 +34,10 @@ public:
 
 	void setWalkStop();
 
+	int getSpeed();
+
 	// 构造器
 	CREATE_FUNC(Tom);
-	int getSpeed();
 };
 
 #endif 

@@ -1,15 +1,13 @@
 #include "Tom.h"
-#include "Resource.h"
 #include "Effect.h"
 #include "SimpleAudioEngine.h"
-
 
 using namespace cocos2d;
 
 Tom::Tom():m_size(100,100),m_speed(24),//m_speed must < 64
-	m_zOder(10),isWalking(false) 
+	isWalking(false) 
 {
-
+	winSize = CCDirector::sharedDirector()->getWinSize();
 }
 
 Tom::~Tom()
@@ -24,7 +22,6 @@ bool Tom::init()
 		return false;
 	}
 	
-	winSize = CCDirector::sharedDirector()->getWinSize();
 	actions = CCAction::create();
 
 	//this->setContentSize(CCSize(64,64));
@@ -89,12 +86,12 @@ void Tom::setWalkStop(){
 	isWalking = false;
 }
 
-void Tom::update(float dt){
-	//CCLOG("No walk");
-}
-
 int Tom::getSpeed()
 {
 	return m_speed;
+}
+
+void Tom::update(float dt){
+	//CCLOG("No walk");
 }
 

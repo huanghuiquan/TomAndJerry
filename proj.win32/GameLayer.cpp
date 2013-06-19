@@ -1,11 +1,3 @@
-//
-//  GameLayer.cpp
-//  MoonWarriorsx
-//
-//  Created by 王 磊 on 12-12-29.
-//
-//
-
 #include "GameLayer.h"
 #include "SimpleAudioEngine.h"
 #include "resource.h"
@@ -13,16 +5,18 @@
 #include "GameOver.h"
 #include "PauseLayer.h"
 #include "ControlLayer.h"
+#include <math.h>
 
 using namespace cocos2d;
 using namespace CocosDenshion;
 
 bool isPaused = false;
 
-GameLayer::GameLayer()
+GameLayer::GameLayer():start(false)
 {
 
 }
+
 GameLayer::~GameLayer()
 {
 }
@@ -65,18 +59,15 @@ void GameLayer::update(float dt)
 	canTomMove(ygDir);
 	if(ygDir != NONE && canTomMove(ygDir)){
 		m_levelManager->tom->move(ygDir);
+		if(!start){ //tom 第一次动，表示开始
+			start = true;
+			this->schedule(schedule_selector(GameLayer::autoControlJerry),0.01);
+		}
 	}
 
 	//检测猫是否抓到老鼠
 	if(isCatchJerry()){
 		gameOver();
-// 		CCDirector::sharedDirector()->pause();
-// 		CCDirector::sharedDirector()->resume();
-
-		//SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
-		//SimpleAudioEngine::sharedEngine()->pauseAllEffects();
-// 		GameOver *gameOver = GameOver::create();
-// 		addChild(gameOver,9999);
 	}
 }
 
@@ -89,8 +80,8 @@ void GameLayer::initBackground()
 
 void GameLayer::gameOver()
 {
-	CCScene * scene = GameOver::scene();
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(0.5, scene));
+	CCDirector::sharedDirector()->pause();
+	this->addChild(GameOver::create(),10);
 }
 
 void GameLayer::doPause(CCObject *pSender)
@@ -136,7 +127,53 @@ bool GameLayer::canTomMove(Direction dir){
 	return true;
 }
 
-float GameLayer::isCatchJerry()
+bool GameLayer::canJerryMove(Direction dir){
+	vector<Floor*> floors = m_levelManager->floors;
+	int len = floors.size();
+	CCRect aRect = m_levelManager->jerry->collideRect();
+	CCRect bRect;
+	int speed = (m_levelManager->jerry)->getSpeed();
+	CCPoint nextPos = (m_levelManager->jerry)->getPosition();
+
+	if(dir == UP){
+		nextPos.y +=1;
+		if(nextPos.y > winSize.height - m_levelManager->jerry->getContentSize().height/2){
+			return false;
+		}
+		aRect.origin.y += speed;
+	}
+	else if(dir == DOWN){
+		nextPos.y -=1;
+		if(nextPos.y < m_levelManager->jerry->getContentSize().height/2){
+			return false;
+		}
+		aRect.origin.y -= speed;
+	}
+	else if(dir == LEFT){
+		nextPos.x -=1;
+		if(nextPos.x < m_levelManager->jerry->getContentSize().width/2){
+			return false;
+		}
+		aRect.origin.x -= speed;
+	}
+	else if(dir == RIGHT){
+		nextPos.x +=1;
+		if(nextPos.x > winSize.width - m_levelManager->jerry->getContentSize().width){
+			return false;
+		}
+		aRect.origin.x += speed;
+	}
+
+	for(int i = 0; i < len; i++){
+		bRect = floors.at(i)->collideRect();
+		if (aRect.intersectsRect(bRect)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool GameLayer::isCatchJerry()
 {
 	CCRect aRect = m_levelManager->tom->collideRect();
 	CCRect bRect = m_levelManager->jerry->collideRect();
@@ -160,6 +197,13 @@ void GameLayer::onExit()
 	CCLayer::onExit();
 }
 
+bool GameLayer::isStart(){
+	return start;
+}
+
+void GameLayer::setStart(){
+	start = true;
+}
 
 bool GameLayer::ccTouchBegan(CCTouch *touch, CCEvent *event)
 {
@@ -174,3 +218,59 @@ void GameLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
 {
 	//    CCLog("touch end!");
 }
+
+void GameLayer::autoControlJerry(float dt){
+	if(canJerryMove(m_levelManager->jerry->getDirection())){
+		m_levelManager->jerry->move(m_levelManager->jerry->getDirection());
+	}
+	else {
+		Direction dir = m_levelManager->jerry->getDirection();
+		while(1){
+			dir = (Direction)((dir + 1) % 4);
+			if(isFartherAwayFromTom(dir)){
+				m_levelManager->jerry->move(dir);
+				m_levelManager->jerry->setDirection(dir);
+
+				break;
+			}
+		}
+	}
+}
+
+float dist(CCPoint a, CCPoint b){
+	return sqrt((float)((a.x - b.x)*(a.x - b.x) + (a.y-b.y)*(a.y-b.y)));
+}
+
+bool GameLayer::isFartherAwayFromTom(Direction dir){
+	CCPoint tomPos = m_levelManager->tom->getPosition();
+	CCPoint jerryPos = m_levelManager->jerry->getPosition();
+	CCPoint jerryNextPos = jerryPos;
+	float orgDis = dist(tomPos,jerryPos);
+	if(dir == UP){
+		jerryNextPos.y += 200;
+		if(dist(tomPos, jerryNextPos) > orgDis){
+			return true;
+		}
+	}
+	else if(dir == DOWN){
+		jerryNextPos.y -= 200;
+		if(dist(tomPos, jerryNextPos) > orgDis){
+			return true;
+		}
+	}
+	else if(dir == RIGHT){
+		jerryNextPos.x += 200;
+		float t = dist(tomPos, jerryNextPos);
+		if(dist(tomPos, jerryNextPos) > orgDis){
+			return true;
+		}
+	}
+	else if(dir == LEFT){
+		jerryNextPos.x -= 200;
+		if(dist(tomPos, jerryNextPos) > orgDis){
+			return true;
+		}
+	}
+	return false;
+}
+
