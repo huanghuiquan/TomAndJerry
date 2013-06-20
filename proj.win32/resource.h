@@ -15,6 +15,8 @@ static const char s_yg[] = "yg.png";
 static const char s_gameOver[] = "gameOver.png";
 static const char s_exit[] = "exit.png";
 static const char s_option[] = "option.png";
+static const char s_fish[] = "fish.png"; 
+	static const char s_cheese[] = "cheese.png"; 
 
 static const char* s_tomRight[] = {"right1.png", "right2.png", "right3.png", "right4.png"};
 static const char* s_tomLeft[] = {"left1.png", "left2.png", "left3.png", "left4.png"};
@@ -35,7 +37,7 @@ static const char s_level1[] = "Levels/level1.txt";
 //map
 const int rows = 12;
 const int cols = 16;
-static int i_map[rows][cols] = {0};
+static int i_map[rows][cols] = {0};  //0-null  3-floor 5-props 7-jerry 9-tom  
 
 //
 enum Direction {UP, DOWN, LEFT, RIGHT, NONE};

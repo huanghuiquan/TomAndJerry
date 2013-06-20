@@ -13,6 +13,7 @@ private:
 
 	// 速度
 	int m_speed;
+	int originSpeed;
 
 	CCAction *actions;
 
@@ -43,8 +44,12 @@ public:
 
 	void changePicture(Direction dir, int step);
 
+
+
 	// 构造器
 	CREATE_FUNC(Tom);
+	void addSpeed( int t );
+	void resetSpeed();
 };
 
 #endif 

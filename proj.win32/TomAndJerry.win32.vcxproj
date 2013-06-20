@@ -134,7 +134,9 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Effect.h" />
     <ClInclude Include="..\Classes\StartMenu.h" />
+    <ClInclude Include="Cheese.h" />
     <ClInclude Include="ControlLayer.h" />
+    <ClInclude Include="Fish.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="GameLayer.h" />
     <ClInclude Include="GameOver.h" />
@@ -143,6 +145,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseLayer.h" />
+    <ClInclude Include="Prop.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Tom.h" />
   </ItemGroup>
@@ -150,8 +153,10 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Effect.cpp" />
     <ClCompile Include="..\Classes\StartMenu.cpp" />
+    <ClCompile Include="Cheese.cpp" />
     <ClCompile Include="Config.h" />
     <ClCompile Include="ControlLayer.cpp" />
+    <ClCompile Include="Fish.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="GameOver.cpp" />
@@ -160,6 +165,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PauseLayer.cpp" />
+    <ClCompile Include="Prop.cpp" />
     <ClCompile Include="Tom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

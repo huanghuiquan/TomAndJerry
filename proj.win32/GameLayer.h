@@ -46,7 +46,12 @@ public:
 
 	bool isFartherAwayFromTom(Direction dir); 
 
+	void addProp(float dt);
+
 	CREATE_FUNC(GameLayer);
+	int isCatchProp();
+	void speedNormalization(float dt);
+
 };
 
 #endif 

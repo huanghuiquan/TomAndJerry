@@ -1,16 +1,19 @@
-﻿生成启动时间为 2013/6/20 3:53:50。
+﻿生成启动时间为 2013/6/20 16:41:32。
      1>项目“I:\cocos2d-2.0-x-2.0.4\TomAndJerry\proj.win32\TomAndJerry.win32.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug.win32\TomAndJerry.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt Tom.cpp
-         Tom.cpp
-     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\tom.cpp(68): warning C4996: 'cocos2d::CCMoveTo::actionWithDuration': 被声明为已否决
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt Jerry.cpp LevelManager.cpp
+         LevelManager.cpp
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\levelmanager.cpp(88): warning C4018: “<”: 有符号/无符号不匹配
+         Jerry.cpp
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\jerry.cpp(73): warning C4996: 'cocos2d::CCMoveTo::actionWithDuration': 被声明为已否决
                  i:\cocos2d-2.0-x-2.0.4\cocos2dx\actions\ccactioninterval.h(352) : 参见“cocos2d::CCMoveTo::actionWithDuration”的声明
-     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\tom.cpp(70): warning C4996: 'cocos2d::CCSequence::actions': 被声明为已否决
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\jerry.cpp(75): warning C4996: 'cocos2d::CCSequence::actions': 被声明为已否决
                  i:\cocos2d-2.0-x-2.0.4\cocos2dx\actions\ccactioninterval.h(118) : 参见“cocos2d::CCSequence::actions”的声明
-     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\tom.cpp(70): warning C4996: 'cocos2d::CCCallFunc::actionWithTarget': 被声明为已否决
+     1>i:\cocos2d-2.0-x-2.0.4\tomandjerry\proj.win32\jerry.cpp(75): warning C4996: 'cocos2d::CCCallFunc::actionWithTarget': 被声明为已否决
                  i:\cocos2d-2.0-x-2.0.4\cocos2dx\actions\ccactioninstant.h(230) : 参见“cocos2d::CCCallFunc::actionWithTarget”的声明
+         正在生成代码...
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
@@ -21,8 +24,10 @@
          Debug.win32\AppDelegate.obj
          Debug.win32\Effect.obj
          Debug.win32\StartMenu.obj
+         Debug.win32\Cheese.obj
          Debug.win32\Config.obj
          Debug.win32\ControlLayer.obj
+         Debug.win32\Fish.obj
          Debug.win32\Floor.obj
          Debug.win32\GameLayer.obj
          Debug.win32\GameOver.obj
@@ -31,6 +36,7 @@
          Debug.win32\main.obj
          Debug.win32\Options.obj
          Debug.win32\PauseLayer.obj
+         Debug.win32\Prop.obj
          Debug.win32\Tom.obj
        Manifest:
          H:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug.win32\TomAndJerry.win32.exe.embed.manifest" /manifest Debug.win32\TomAndJerry.win32.exe.intermediate.manifest
@@ -45,4 +51,4 @@
 
 生成成功。
 
-已用时间 00:00:03.84
+已用时间 00:00:06.56

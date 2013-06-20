@@ -43,6 +43,7 @@ bool GameOver::init()
 	addChild(menu, 2);
 	menu->setPosition(winSize.width / 2, 220);
 
+
 	return true;
 
 }
@@ -54,3 +55,4 @@ void GameOver::playAgain(CCObject* pSender)
 // 	scene->addChild(GameLayer::create());
 // 	CCDirector::sharedDirector()->replaceScene(CCTransitionFlipX::transitionWithDuration(1.2,scene));
 }
+

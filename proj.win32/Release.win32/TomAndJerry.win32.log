@@ -1,25 +1,106 @@
-﻿生成启动时间为 2013/6/16 14:00:55。
+﻿生成启动时间为 2013/6/20 16:44:50。
      1>项目“I:\cocos2d-2.0-x-2.0.4\TomAndJerry\proj.win32\TomAndJerry.win32.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Release.win32\TomAndJerry.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt GameOver.cpp
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"I:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"I:\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\Effect.cpp ..\Classes\StartMenu.cpp Cheese.cpp Config.h ControlLayer.cpp Fish.cpp Floor.cpp GameLayer.cpp GameOver.cpp Jerry.cpp LevelManager.cpp main.cpp Options.cpp PauseLayer.cpp Prop.cpp Tom.cpp
+         AppDelegate.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         Effect.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         StartMenu.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>..\Classes\StartMenu.cpp(81): warning C4305: “参数”: 从“double”到“float”截断
+     1>..\Classes\StartMenu.cpp(81): warning C4996: 'cocos2d::CCTransitionMoveInR::transitionWithDuration': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\layers_scenes_transitions_nodes\CCTransition.h(200) : 参见“cocos2d::CCTransitionMoveInR::transitionWithDuration”的声明
+     1>..\Classes\StartMenu.cpp(85): warning C4305: “参数”: 从“double”到“float”截断
+         Cheese.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         Config.h
+         ControlLayer.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>ControlLayer.cpp(14): warning C4996: 'cocos2d::CCSprite::spriteWithFile': 被声明为已否决
+                 I:\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : 参见“cocos2d::CCSprite::spriteWithFile”的声明
+     1>ControlLayer.cpp(22): warning C4996: 'cocos2d::CCSprite::spriteWithFile': 被声明为已否决
+                 I:\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes/CCSprite.h(180) : 参见“cocos2d::CCSprite::spriteWithFile”的声明
+     1>ControlLayer.cpp(40): warning C4996: 'cocos2d::CCTouch::locationInView': 被声明为已否决
+                 I:\cocos2d-2.0-x-2.0.4\cocos2dx\touch_dispatcher/CCTouch.h(60) : 参见“cocos2d::CCTouch::locationInView”的声明
+     1>ControlLayer.cpp(44): warning C4996: 'cocos2d::CCRect::CCRectContainsPoint': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\cocoa/CCGeometry.h(106) : 参见“cocos2d::CCRect::CCRectContainsPoint”的声明
+     1>ControlLayer.cpp(55): warning C4996: 'cocos2d::CCTouch::locationInView': 被声明为已否决
+                 I:\cocos2d-2.0-x-2.0.4\cocos2dx\touch_dispatcher/CCTouch.h(60) : 参见“cocos2d::CCTouch::locationInView”的声明
+     1>ControlLayer.cpp(70): warning C4996: 'cocos2d::CCRect::CCRectContainsPoint': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\cocoa/CCGeometry.h(106) : 参见“cocos2d::CCRect::CCRectContainsPoint”的声明
+     1>ControlLayer.cpp(75): warning C4996: 'cocos2d::CCRect::CCRectContainsPoint': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\cocoa/CCGeometry.h(106) : 参见“cocos2d::CCRect::CCRectContainsPoint”的声明
+     1>ControlLayer.cpp(80): warning C4996: 'cocos2d::CCRect::CCRectContainsPoint': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\cocoa/CCGeometry.h(106) : 参见“cocos2d::CCRect::CCRectContainsPoint”的声明
+     1>ControlLayer.cpp(85): warning C4996: 'cocos2d::CCRect::CCRectContainsPoint': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\cocoa/CCGeometry.h(106) : 参见“cocos2d::CCRect::CCRectContainsPoint”的声明
+     1>ControlLayer.cpp(89): warning C4996: 'cocos2d::CCRect::CCRectContainsPoint': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\cocoa/CCGeometry.h(106) : 参见“cocos2d::CCRect::CCRectContainsPoint”的声明
+     1>ControlLayer.cpp(59): warning C4101: “dir”: 未引用的局部变量
+         Fish.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         Floor.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         GameLayer.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>GameLayer.cpp(67): warning C4305: “参数”: 从“double”到“float”截断
          GameOver.cpp
      1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
-     1>GameOver.cpp(42): warning C4305: “参数”: 从“double”到“float”截断
+         Jerry.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>Jerry.cpp(73): warning C4996: 'cocos2d::CCMoveTo::actionWithDuration': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\actions\CCActionInterval.h(352) : 参见“cocos2d::CCMoveTo::actionWithDuration”的声明
+     1>Jerry.cpp(75): warning C4996: 'cocos2d::CCSequence::actions': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\actions\CCActionInterval.h(118) : 参见“cocos2d::CCSequence::actions”的声明
+     1>Jerry.cpp(75): warning C4996: 'cocos2d::CCCallFunc::actionWithTarget': 被声明为已否决
+                 I:\cocos2d-2.0-x-2.0.4\cocos2dx\actions/CCActionInstant.h(230) : 参见“cocos2d::CCCallFunc::actionWithTarget”的声明
+         LevelManager.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>LevelManager.cpp(88): warning C4018: “<”: 有符号/无符号不匹配
+         main.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         Options.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>Options.cpp(53): warning C4305: “参数”: 从“double”到“float”截断
+     1>Options.cpp(83): warning C4305: “参数”: 从“double”到“float”截断
+         PauseLayer.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>PauseLayer.cpp(43): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+         Prop.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         Tom.cpp
+     1>H:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>Tom.cpp(69): warning C4996: 'cocos2d::CCMoveTo::actionWithDuration': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\actions\CCActionInterval.h(352) : 参见“cocos2d::CCMoveTo::actionWithDuration”的声明
+     1>Tom.cpp(71): warning C4996: 'cocos2d::CCSequence::actions': 被声明为已否决
+                 i:\cocos2d-2.0-x-2.0.4\cocos2dx\actions\CCActionInterval.h(118) : 参见“cocos2d::CCSequence::actions”的声明
+     1>Tom.cpp(71): warning C4996: 'cocos2d::CCCallFunc::actionWithTarget': 被声明为已否决
+                 I:\cocos2d-2.0-x-2.0.4\cocos2dx\actions/CCActionInstant.h(230) : 参见“cocos2d::CCCallFunc::actionWithTarget”的声明
+         正在生成代码...
        ResourceCompile:
-         所有输出均为最新。
+         H:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /l"0x0409" /IRelease.win32\ /nologo /fo"Release.win32\TomAndJerry.res" TomAndJerry.rc 
        Link:
          H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"I:\cocos2d-2.0-x-2.0.4\Release.win32\\" libcocos2d.lib libExtensions.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release.win32\TomAndJerry.win32.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.lib" /MACHINE:X86 Release.win32\TomAndJerry.res
          Release.win32\AppDelegate.obj
          Release.win32\Effect.obj
          Release.win32\StartMenu.obj
+         Release.win32\Cheese.obj
+         Release.win32\Config.obj
+         Release.win32\ControlLayer.obj
+         Release.win32\Fish.obj
+         Release.win32\Floor.obj
          Release.win32\GameLayer.obj
          Release.win32\GameOver.obj
+         Release.win32\Jerry.obj
          Release.win32\LevelManager.obj
          Release.win32\main.obj
          Release.win32\Options.obj
          Release.win32\PauseLayer.obj
+         Release.win32\Prop.obj
+         Release.win32\Tom.obj
          TomAndJerry.win32.vcxproj -> I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.exe
        Manifest:
          H:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"I:\cocos2d-2.0-x-2.0.4\Release.win32\TomAndJerry.win32.exe;#1" /manifest Release.win32\TomAndJerry.win32.exe.intermediate.manifest
@@ -30,4 +111,4 @@
 
 生成成功。
 
-已用时间 00:00:02.41
+已用时间 00:00:31.67

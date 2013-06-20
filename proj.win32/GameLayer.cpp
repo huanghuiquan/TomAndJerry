@@ -33,6 +33,7 @@ bool GameLayer::init()
 	m_levelManager = new LevelManager(this);
 	initBackground();
 
+
 	//pause item
 	CCMenuItemImage *pause = CCMenuItemImage::create(s_pause, s_pause, this, menu_selector(GameLayer::doPause));
 	pause->setAnchorPoint(ccp(1, 0));
@@ -46,6 +47,8 @@ bool GameLayer::init()
 	controlLayer = ControlLayer::create();
 	controlLayer->setControledSprite(m_levelManager->tom);
 	this->addChild(controlLayer,9999);
+
+	this->schedule(schedule_selector(GameLayer::addProp),10.0);  //每10s增加一个道具
 
 	this->scheduleUpdate();
 	
@@ -63,6 +66,28 @@ void GameLayer::update(float dt)
 			start = true;
 			this->schedule(schedule_selector(GameLayer::autoControlJerry),0.01);
 		}
+	}
+	//检测道具
+	int idx = isCatchProp();
+	if(idx == 0){
+		Prop *prop = m_levelManager->props.at(idx);
+		CCPoint pos = prop->getPosition();
+		m_levelManager->tom->addSpeed(prop->getSpeedBonus());
+		this->scheduleOnce(schedule_selector(GameLayer::speedNormalization),prop->getDuration());
+		this->removeChild(prop,true);
+		m_levelManager->props.at(idx) = NULL;
+
+		i_map[(int)(pos.y / 64)][(int)(pos.x / 64)] = 0;
+	}
+	else if(idx == 1){
+		Prop *prop = m_levelManager->props.at(idx);
+		CCPoint pos = prop->getPosition();
+		m_levelManager->jerry->addSpeed(prop->getSpeedBonus());
+		this->scheduleOnce(schedule_selector(GameLayer::speedNormalization),prop->getDuration());
+		this->removeChild(prop,true);
+		m_levelManager->props.at(idx) = NULL;
+
+		i_map[(int)(pos.y / 64)][(int)(pos.x / 64)] = 0;
 	}
 
 	//检测猫是否抓到老鼠
@@ -277,5 +302,36 @@ bool GameLayer::isFartherAwayFromTom(Direction dir){
 		}
 	}
 	return false;
+}
+
+void GameLayer::addProp(float dt){ //加道具
+	m_levelManager->addProp();
+}
+
+int GameLayer::isCatchProp()
+{
+	int n = m_levelManager->props.size();
+	for(int i = 0; i < n; i++ ){
+		if(m_levelManager->props.at(i) != NULL && i == 0){
+			CCRect aRect = m_levelManager->tom->collideRect();
+			CCRect bRect = m_levelManager->props.at(i)->collideRect();
+			if (aRect.intersectsRect(bRect)) {
+				return i;
+			}
+		}
+		else if(m_levelManager->props.at(i) != NULL && i == 1){
+			CCRect aRect = m_levelManager->jerry->collideRect();
+			CCRect bRect = m_levelManager->props.at(i)->collideRect();
+			if (aRect.intersectsRect(bRect)) {
+				return i;
+			}
+		}
+	}
+	return -1;
+}
+
+void GameLayer::speedNormalization(float dt){
+	m_levelManager->tom->resetSpeed();
+	m_levelManager->jerry->resetSpeed();
 }
 

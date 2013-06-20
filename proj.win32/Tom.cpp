@@ -8,6 +8,7 @@ Tom::Tom():m_size(100,100),m_speed(15),m_step(0),//m_speed must < 64
 	isWalking(false) 
 {
 	winSize = CCDirector::sharedDirector()->getWinSize();
+	originSpeed = m_speed;
 }
 
 Tom::~Tom()
@@ -121,3 +122,14 @@ void Tom::changePicture(Direction dir, int step)
 	this->setTexture(TomTextureCache);
 	//TomTextureCache->release();
 }
+
+void Tom::addSpeed( int t )
+{
+	m_speed += t;;
+}
+
+void Tom::resetSpeed()
+{
+	m_speed = originSpeed;
+}
+

@@ -76,6 +76,15 @@
     <ClInclude Include="ControlLayer.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Prop.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Cheese.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -118,6 +127,15 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="ControlLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Prop.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Cheese.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

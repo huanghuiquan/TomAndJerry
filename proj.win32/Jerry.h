@@ -21,6 +21,8 @@ private:
 
 	CCTexture2D * jerryTextureCache;
 
+	int originSpeed;
+
 	int m_step;
 
 public:
@@ -39,6 +41,9 @@ public:
 	Direction getDirection();
 	void setDirection(Direction dir);
 	void changePicture(Direction dir, int step);
+
+	void addSpeed( int t );
+	void resetSpeed();
 
 	CREATE_FUNC(Jerry);
 };

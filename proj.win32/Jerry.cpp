@@ -4,8 +4,9 @@
 
 using namespace cocos2d;
 
-Jerry::Jerry():m_size(64,64),m_speed(15),isWalking(false),curDir(DOWN),m_step(0)
+Jerry::Jerry():m_size(64,64),m_speed(20),isWalking(false),curDir(DOWN),m_step(0)
 {
+	originSpeed = m_speed;
 	winSize = CCDirector::sharedDirector()->getWinSize();
 }
 
@@ -73,6 +74,8 @@ void Jerry::move(Direction dir){
 		actions = CCSequence::actions(actionTo,  
 			CCCallFunc::actionWithTarget(this, callfunc_selector(Jerry::setWalkStop)),NULL);  
 		this->runAction(actions);
+		m_step = (m_speed+1)%4;
+		changePicture(dir,m_step);
 		isWalking = true;
 	}
 }
@@ -119,3 +122,12 @@ void Jerry::changePicture(Direction dir, int step)
 	//TomTextureCache->release();
 }
 
+void Jerry::addSpeed( int t )
+{
+	m_speed += t;;
+}
+
+void Jerry::resetSpeed()
+{
+	m_speed = originSpeed;
+}

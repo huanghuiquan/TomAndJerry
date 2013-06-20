@@ -9,6 +9,9 @@
 #include "Tom.h"
 #include "Jerry.h"
 #include "Floor.h"
+#include "Prop.h"
+#include "Fish.h"
+#include "Cheese.h"
 
 USING_NS_CC;
 using namespace std;
@@ -26,12 +29,15 @@ public:
 	Tom *tom;
 	vector<Floor*> floors;
 
+	//道具s
+	vector<Prop*> props;
 	CCSize winSize;
 
 public:
 	LevelManager(cocos2d::CCLayer *gameLayer);
 	~LevelManager();
 
+	void addProp(); //增加一个道具
 
 	void loadLevelResource(int level);
 };
